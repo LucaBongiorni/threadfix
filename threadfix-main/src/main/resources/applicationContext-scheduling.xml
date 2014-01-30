@@ -55,12 +55,12 @@
 
 	<!-- cron based trigger for synchronization with Defect Trackers -->
 	<!-- run every morning at 2 AM -->
-	<bean id="defectTrackerCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+	<bean id="defectTrackerCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
 		p:jobDetail-ref="defectTrackerJob" p:cronExpression="2 0 0 * * ?" />
 
 	<!-- cron based trigger for Import Scans -->
 	<!-- run every morning at 6 AM -->
-	<bean id="importScansCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"
+	<bean id="importScansCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
 		p:jobDetail-ref="importScansJob" p:cronExpression="6 0 0 * * ?" />
 		
 	<!--
